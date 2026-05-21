@@ -1,0 +1,42 @@
+RESUME - Nuttapat Nunthapatpokin (Q)
+Email: ikewmee@gmail.com | GitHub: github.com/ikewmee | Location: Bang Phli, Samutprakarn, Thailand
+
+SUMMARY
+Junior Software Developer with hands-on experience building full-stack web applications,
+integrating APIs, and implementing automated testing. Recently expanded into containerization,
+DevOps, and serverless architecture - building, debugging, and deploying production services
+with CI/CD pipelines, serverless functions, and cloud databases. Strong foundation in
+programming fundamentals and software engineering principles. Detail-oriented, adaptable,
+and comfortable working independently in remote environments.
+
+SKILLS
+Programming Languages: C, C++, Java, JavaScript, Python, Go, Ruby
+Frontend: React, Redux Toolkit, Vite, HTML, CSS
+Backend: Express, Sinatra, FastAPI, REST API, OAuth, SQL, Webhook integration
+Databases: PostgreSQL, SQL, Supabase
+DevOps & Tools: Docker, Docker Compose, multi-stage Dockerfiles, container networking
+and volumes, GitHub Actions (CI/CD), Docker Hub, Git, Vercel, Netlify, Cypress, Vitest, Postman
+Cloud & Serverless: Vercel serverless functions, Supabase (PostgreSQL as a service),
+GitHub Actions scheduled workflows (cron), environment variable and secrets management
+Soft Skills: Team Communication, Rapid Learning, Problem Solving, Quality Checking Mindset,
+Systems Thinking, Debugging and Root Cause Analysis
+
+EXPERIENCE
+Freelance Gig Worker (March 2025 - Present)
+Completed 60+ independent task-based projects involving data evaluation, documentation,
+and quality verification under minimal supervision.
+
+EDUCATION
+Mahidol University - BSc. Information and Communication Technology (ICT), Major: Multi-media
+Graduated 2024 with 2nd Class Honor (2020-2024)
+
+Satriwitthaya 2 High School - Math & English track (2018-2020)
+
+LANGUAGES
+Thai (Native), English (TOEIC 840), Japanese (Beginner), Chinese (Beginner)
+Typing speed: 75 WPM English, 40 WPM Thai
+
+OTHER
+Reviewed novel for accuracy, clarity, and consistency.
+Hands-on practical skills: replaced automotive spark plugs, ignition coils, headlights,
+and 12V battery. Performed full strip bicycle repair and maintenance.

@@ -1,0 +1,86 @@
+TECH PROJECTS - Nuttapat Nunthapatpokin (Q)
+
+--- Project 1: Bangchak Oil Price LINE Notification Bot ---
+Type: Backend + Serverless + DevOps
+Stack: Python, LINE Messaging API, Vercel (serverless), Supabase (PostgreSQL),
+GitHub Actions, Bangchak Oil Price API
+Repo: https://github.com/ikewmee/thai-oil-price-api
+
+Q built a fully automated LINE bot that fetches daily Bangchak oil prices and sends
+personalized notifications to followers - completely free with no server cost. The bot
+handles LINE events (follow, unfollow, postback, text messages) via a serverless webhook
+built on Vercel using Python's BaseHTTPRequestHandler.
+
+Users select their preferred fuel types via LINE Quick Reply buttons with multi-select
+and deselect-all support. Preferences and notification flags are stored per-user in
+Supabase PostgreSQL. Users can toggle a global on/off switch and a notify-only-when-
+price-changes mode. Price change detection compares today's API price against each user's
+last recorded price in the database for accurate per-user tracking.
+
+Daily notifications are scheduled via GitHub Actions cron at 21:00 Bangkok time, timed
+to run after Bangchak publishes the next day's prices. The system uses two structured
+logging tables: oil_price_logs (full API metadata and all fuel prices per publish date)
+and notify_logs (per-user, per-fuel records with status and error tracking).
+
+Database migration scripts live under scripts/migrations/ for safe production corrections.
+The codebase applies clean code practices: shared constants (FUEL_NAMES, FUEL_COLUMNS),
+helper functions, UI string constants, and clear separation of concerns. Shipped to real
+users and iterated based on live feedback - fixed date display bugs, price history
+mismatches, and LINE message formatting issues.
+
+--- Project 2: Dockerized REST API with CI/CD Pipeline ---
+Type: Backend + DevOps
+Stack: Ruby, Sinatra, PostgreSQL, Docker, Docker Compose, GitHub Actions, Docker Hub
+
+Q built a REST API (full CRUD) using Ruby and Sinatra, containerized with Docker.
+The Dockerfile uses a multi-stage build that reduced the final image size by approximately
+66%. The multi-container setup (app + Postgres) is orchestrated with Docker Compose,
+including health checks, named volumes, and custom networking.
+
+Security best practices applied: non-root user inside the container, .dockerignore to
+exclude sensitive files, and secrets passed via environment variables. A full CI/CD
+pipeline using GitHub Actions automatically builds and pushes the image to Docker Hub
+on every git push. Container networking, runtime errors, and application-level bugs
+were debugged and resolved independently.
+
+--- Project 3: Docker Debugging Exercise ---
+Type: DevOps / Debugging
+Stack: Docker, Docker Compose, Ruby, Sinatra, PostgreSQL
+
+Q diagnosed and fixed 5 bugs across a Dockerfile, docker-compose.yml, and application
+code in a broken containerized app. Bugs included: a base image typo, wrong port mapping,
+missing depends_on directive, a missing runtime library, and an incorrect HTTP method.
+Used docker logs, docker ps, docker exec, and docker inspect to systematically identify
+root causes. Demonstrated production-level debugging mindset - one fix at a time,
+verifying after each change.
+
+--- Project 4: Mini Reddit Client ---
+Type: Frontend
+Stack: React, Redux Toolkit, Vite
+
+A small Reddit client built to practice async state management. Implemented Redux slices,
+thunks, selectors, and error/loading logic. Wrote unit tests with Vitest and end-to-end
+tests with Cypress. Documented deployment limitations caused by external API CORS policies.
+
+--- Project 5: Spotify Mini App ---
+Type: Frontend + API Integration
+Stack: React, Spotify Web API, OAuth, Netlify
+Live: https://leafy-parfait-065f16.netlify.app/
+
+A web application that connects to the Spotify Web API to retrieve playlist data based
+on user search. Implemented OAuth token handling and API requests for searching and
+retrieving music metadata. Handles loading and error states, deployed on Netlify.
+
+--- Project 6: ESP32 Foot Pedal Controller ---
+Type: Hardware + Embedded Software
+Stack: ESP32, Firmware/Embedded
+
+Integrated a foot pedal switch using an ESP32 board as an additional computer input device.
+Developed firmware for signal processing to control electronic equipment.
+
+--- Project 7: Speech Lab VR ---
+Type: VR Software (Graduate Project)
+Stack: VR, Meta Quest 2
+
+A VR software designed to improve student presentation and confidence skills, integrated
+with Meta Quest 2 goggles and controllers.

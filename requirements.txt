@@ -1,0 +1,23 @@
+# --- Web server ---
+fastapi==0.115.9
+uvicorn[standard]==0.29.0
+
+# --- LangChain core ---
+langchain==0.3.25
+langchain-community==0.3.25
+
+# --- LLM providers ---
+langchain-anthropic==0.3.22
+ollama==0.2.1
+
+# --- Vector store ---
+chromadb==1.0.9
+langchain-chroma==0.2.4
+
+# --- Embeddings ---
+sentence-transformers==3.4.1
+langchain-huggingface==0.1.2
+
+# --- Utilities ---
+python-dotenv==1.0.1
+pydantic-settings==2.10.1
