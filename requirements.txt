@@ -9,6 +9,7 @@ langchain-community==0.3.25
 # --- LLM providers ---
 langchain-anthropic==0.3.22
 ollama==0.2.1
+langchain-ollama==0.2.3
 
 # --- Vector store ---
 chromadb==1.0.9

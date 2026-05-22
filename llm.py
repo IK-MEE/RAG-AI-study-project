@@ -1,5 +1,5 @@
 from langchain_anthropic import ChatAnthropic
-from langchain_community.chat_models import ChatOllama
+from langchain_ollama import ChatOllama
 
 from app.config import settings
 
@@ -20,7 +20,7 @@ def get_llm():
     if provider == "ollama":
         return ChatOllama(
             model=settings.ollama_model,
-            temperature=0.2,   # low = more factual, less creative
+            temperature=0.2,
         )
 
     if provider == "anthropic":

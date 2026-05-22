@@ -1,4 +1,4 @@
-TECH PROJECTS - Nuttapat Nunthapatpokin (Q)
+TECH PROJECTS — Nuttapat Nunthapatpokin (Q)
 
 --- Project 1: Bangchak Oil Price LINE Notification Bot ---
 Type: Backend + Serverless + DevOps
@@ -7,7 +7,7 @@ GitHub Actions, Bangchak Oil Price API
 Repo: https://github.com/ikewmee/thai-oil-price-api
 
 Q built a fully automated LINE bot that fetches daily Bangchak oil prices and sends
-personalized notifications to followers - completely free with no server cost. The bot
+personalized notifications to followers — completely free with no server cost. The bot
 handles LINE events (follow, unfollow, postback, text messages) via a serverless webhook
 built on Vercel using Python's BaseHTTPRequestHandler.
 
@@ -25,7 +25,7 @@ and notify_logs (per-user, per-fuel records with status and error tracking).
 Database migration scripts live under scripts/migrations/ for safe production corrections.
 The codebase applies clean code practices: shared constants (FUEL_NAMES, FUEL_COLUMNS),
 helper functions, UI string constants, and clear separation of concerns. Shipped to real
-users and iterated based on live feedback - fixed date display bugs, price history
+users and iterated based on live feedback — fixed date display bugs, price history
 mismatches, and LINE message formatting issues.
 
 --- Project 2: Dockerized REST API with CI/CD Pipeline ---
@@ -51,7 +51,7 @@ Q diagnosed and fixed 5 bugs across a Dockerfile, docker-compose.yml, and applic
 code in a broken containerized app. Bugs included: a base image typo, wrong port mapping,
 missing depends_on directive, a missing runtime library, and an incorrect HTTP method.
 Used docker logs, docker ps, docker exec, and docker inspect to systematically identify
-root causes. Demonstrated production-level debugging mindset - one fix at a time,
+root causes. Demonstrated production-level debugging mindset — one fix at a time,
 verifying after each change.
 
 --- Project 4: Mini Reddit Client ---

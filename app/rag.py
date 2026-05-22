@@ -26,13 +26,17 @@ def split_documents(docs):
     """
     Cut documents into overlapping chunks.
 
-    chunk_size=500   — each chunk is at most 500 characters
-    chunk_overlap=50 — the last 50 chars of chunk N become the first 50 of chunk N+1
-                       so a sentence that straddles a boundary isn't lost
+    chunk_size=1000  — large enough to capture a full resume section (SKILLS,
+                       EXPERIENCE, EDUCATION) in one chunk rather than splitting
+                       mid-section. Tuned for short structured documents like resumes.
+    chunk_overlap=100 — repeats the last 100 chars in the next chunk so context
+                        is not lost at section boundaries.
+    separators        — tries to split on blank lines first, then single newlines,
+                        then sentences. Respects document structure.
     """
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
-        chunk_overlap=50,
+        chunk_overlap=100,
         separators=["\n\n", "\n", ".", " "],
     )
     chunks = splitter.split_documents(docs)
