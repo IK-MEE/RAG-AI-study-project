@@ -13,6 +13,10 @@ FROM python:3.13-slim AS runtime
 
 WORKDIR /app
 
+# Install curl for the Ollama readiness check in entrypoint.sh
+RUN apt-get update && apt-get install -y --no-install-recommends curl && \
+    rm -rf /var/lib/apt/lists/*
+
 # Copy installed packages from builder
 COPY --from=builder /install /usr/local
 
@@ -30,7 +34,6 @@ RUN mkdir -p /app/chroma_db /app/.cache/huggingface && \
     chown -R appuser:appuser /app && \
     chmod +x /app/entrypoint.sh
 
-# Tell HuggingFace where to cache models
 ENV HF_HOME=/app/.cache/huggingface
 
 USER appuser

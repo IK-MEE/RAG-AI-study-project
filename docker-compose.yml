@@ -7,11 +7,6 @@ services:
       - "11434:11434"
     volumes:
       - ollama-data:/root/.ollama
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   app:
     build: .
@@ -27,11 +22,10 @@ services:
       - HF_HOME=/app/.cache/huggingface
     volumes:
       - chroma-data:/app/chroma_db
-      - hf-cache:/app/.cache/huggingface   # persists model between restarts
+      - hf-cache:/app/.cache/huggingface
     depends_on:
-      ollama:
-        condition: service_healthy
-    restart: on-failure
+      - ollama
+    restart: unless-stopped
 
 volumes:
   ollama-data:
