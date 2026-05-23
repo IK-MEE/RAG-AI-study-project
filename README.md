@@ -50,12 +50,12 @@ there, it says so.
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                   docker-compose                     │
-│                                                      │
+│                   docker-compose                    │
+│                                                     │
 │  ┌──────────────────┐      ┌──────────────────────┐ │
-│  │    rag-app        │      │     rag-ollama        │ │
+│  │    rag-app       │      │     rag-ollama       │ │
 │  │                  │      │                      │ │
-│  │  FastAPI :8000   │─────▶│  Ollama :11434       │ │
+│  │  FastAPI :8000   │─────>│  Ollama :11434       │ │
 │  │  LangChain RAG   │      │  llama3 model        │ │
 │  │  ChromaDB        │      └──────────────────────┘ │
 │  │  HF Embeddings   │                               │
@@ -77,7 +77,7 @@ there, it says so.
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/ikewmee/rag-chatbot.git
+git clone https://github.com/IK-MEE/RAG-AI-study-project.git
 cd rag-chatbot
 
 # 2. Pull the model
@@ -106,7 +106,7 @@ Open `http://localhost:8000` and start asking questions.
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/ikewmee/rag-chatbot.git
+git clone https://github.com/IK-MEE/RAG-AI-study-project.git
 cd rag-chatbot
 
 # 2. Start the full stack
@@ -216,5 +216,5 @@ Requires `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets in GitHub repo setti
 ## Author
 
 **Nuttapat Nunthapatpokin (Q)**
-Bangkok, Thailand
-[github.com/ikewmee](https://github.com/ikewmee) · ikewmee@gmail.com
+Bang Phli, Samutprakarn, Thailand
+[github.com/IK-MEE](https://github.com/IK-MEE) · ikewmee@gmail.com

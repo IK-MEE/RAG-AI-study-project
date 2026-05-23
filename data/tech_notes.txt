@@ -4,7 +4,7 @@ TECH PROJECTS — Nuttapat Nunthapatpokin (Q)
 Type: Backend + Serverless + DevOps
 Stack: Python, LINE Messaging API, Vercel (serverless), Supabase (PostgreSQL),
 GitHub Actions, Bangchak Oil Price API
-Repo: https://github.com/ikewmee/thai-oil-price-api
+Repo: https://github.com/IK-MEE/thai-oil-price-api
 
 Q built a fully automated LINE bot that fetches daily Bangchak oil prices and sends
 personalized notifications to followers — completely free with no server cost. The bot
