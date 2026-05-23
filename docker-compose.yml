@@ -1,0 +1,39 @@
+services:
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: rag-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: rag-app
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - CHROMA_DB_PATH=/app/chroma_db
+      - DATA_PATH=/app/data
+      - ANONYMIZED_TELEMETRY=False
+      - HF_HOME=/app/.cache/huggingface
+    volumes:
+      - chroma-data:/app/chroma_db
+      - hf-cache:/app/.cache/huggingface   # persists model between restarts
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: on-failure
+
+volumes:
+  ollama-data:
+  chroma-data:
+  hf-cache:

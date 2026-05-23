@@ -27,20 +27,14 @@ def build_rag_chain():
       1. Retriever fetches top-k relevant chunks from Chroma
       2. Chunks are formatted into the prompt as {context}
       3. LLM receives prompt and generates an answer
-
-    Returns a callable that accepts a question string and returns an answer string.
     """
     retriever = get_retriever()
     llm = get_llm()
 
     def chain(question: str) -> str:
-        # Step 1: retrieve relevant chunks
         docs = retriever.invoke(question)
-
-        # Step 2: join chunks into a single context string
         context = "\n\n".join(doc.page_content for doc in docs)
 
-        # Step 3: build the full prompt (printed for debugging / interviews)
         prompt = RAG_PROMPT.format(context=context, question=question)
         print("\n" + "="*60)
         print("FULL PROMPT SENT TO LLM:")
@@ -48,7 +42,6 @@ def build_rag_chain():
         print(prompt)
         print("="*60 + "\n")
 
-        # Step 4: send to LLM and return the answer
         response = llm.invoke(prompt)
         return response.content
 

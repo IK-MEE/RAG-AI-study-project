@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     llm_provider: str = "ollama"
     anthropic_api_key: str = ""
     ollama_model: str = "llama3"
+    ollama_base_url: str = "http://localhost:11434"  # overridden in Docker
     anthropic_model: str = "claude-haiku-4-5-20251001"
     chroma_db_path: str = "./chroma_db"
     data_path: str = "./data"
